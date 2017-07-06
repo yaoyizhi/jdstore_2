@@ -39,6 +39,7 @@ group :development, :test do
     gem 'bootstrap-sass'
     gem 'devise'
     gem 'simple_form'
+    gem 'font-awesome-rails'
     gem 'byebug', platform: :mri
 end
 
