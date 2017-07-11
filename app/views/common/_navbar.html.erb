@@ -12,6 +12,7 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                <%= link_to(content_tag(:i, '购物车',class: 'fa fa-shopping-cart'),'#')%>-(<%= @products.count %>)
                 <% if !current_user %>
                     <li><%= link_to("注册", new_user_registration_path) %> </li>
                     <li><%= link_to(content_tag(:i, '登入',class: 'fa fa-sign-in'), new_user_session_path) %></li>
