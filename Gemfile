@@ -43,6 +43,7 @@ group :development, :test do
     gem 'carrierwave'
     gem 'mini_magick'
     gem 'letter_opener', group: :development
+    gem 'aasm'
     gem 'byebug', platform: :mri
 end
 
