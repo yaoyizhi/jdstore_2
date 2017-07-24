@@ -10,9 +10,10 @@ Rails.application.routes.draw do
     end
     namespace :admin do
         resources :products
-        resources :orders
-        member do
-            post :ship
+        resources :orders do
+            member do
+                post :ship
+            end
         end
     end
 
