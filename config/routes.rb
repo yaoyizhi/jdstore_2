@@ -13,6 +13,9 @@ Rails.application.routes.draw do
         resources :orders do
             member do
                 post :ship
+                post :cancel
+                post :shipped
+                post :return
             end
         end
     end
