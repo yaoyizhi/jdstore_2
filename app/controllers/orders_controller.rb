@@ -46,6 +46,13 @@ class OrdersController < ApplicationController
         flash[:notice] = '你已支付成功！'
     end
 
+    def apply_to_cancel_order
+        @order = Order.find(params[:id])
+        OrderMailer.apply_cancel_order(@order).deliver!
+        flash[:notice] = '已提交申请'
+        redirect_to order_path(@order.token)
+    end
+
     private
 
     def order_params
