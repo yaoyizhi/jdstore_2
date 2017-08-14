@@ -1,13 +1,15 @@
 <h2>Edit Product</h2>
 <%= simple_form_for [:admin,@product] do |f|%>
-    <%= f.input :title %>
-    <%= f.input :description%>
-    <%= f.input :quantity %>
-    <%= f.input :price %>
-    <% if @product.image.present? %>
-        <span>目前商品图</span><br>
-        <%= image_tag(@product.image.thumb.url)%>
-    <% end %>
-    <%= f.input :image, as: :file %>
-    <%= f.submit 'Submit', data: {disable_with:"Submiting..."}%>
+  <%= f.input :title %>
+  <%= f.input :description%>
+  <%= f.input :quantity %>
+  <%= f.input :price %>
+  <% if @product.image.present? %>
+    <span>目前商品图</span><br>
+    <%= image_tag(@product.image.thumb.url)%>
+  <% end %>
+  <%= f.input :image, as: :file %>
+  <%= f.input :friendly_id %>
+  <p class="help-block">限小写英数字及横线，将作为网址的一部分</p>
+  <%= f.submit 'Submit', data: {disable_with:"Submiting..."}%>
 <% end %>

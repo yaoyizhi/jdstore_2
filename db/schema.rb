@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721072558) do
+ActiveRecord::Schema.define(version: 20170814080647) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "product_id"
@@ -75,6 +75,8 @@ ActiveRecord::Schema.define(version: 20170721072558) do
     t.integer  "quantity"
     t.integer  "price"
     t.string   "image"
+    t.string   "friendly_id"
+    t.index ["friendly_id"], name: "index_products_on_friendly_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
