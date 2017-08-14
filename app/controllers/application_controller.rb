@@ -32,4 +32,10 @@ class ApplicationController < ActionController::Base
 
     I18n.locale = session[:locale] || I18n.default_locale
   end
+
+  before_action :set_timezone
+
+  def set_timezone
+    Time.zone = current_user.time_zone if current_user && current_user.time_zone
+  end
 end

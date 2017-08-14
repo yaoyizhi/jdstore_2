@@ -28,7 +28,8 @@
             <ul class="dropdown-menu">
               <li>
                 <% if current_user.is_admin %>
-                  <%=link_to("Admin Panel", admin_products_path)%>
+                  <li> <%=link_to("Admin Panel", admin_products_path)%></li>
+                  <li><%= link_to("修改管理员资料", edit_user_path)%></li>
                 <% end %>
               </li>
               <li><%= link_to("My Order", account_orders_path)%></li>
